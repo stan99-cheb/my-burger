@@ -1,0 +1,7 @@
+.main {
+  height: calc(100% - var(--header-height));
+
+  display: flex;
+  justify-content: center;
+  column-gap: 40px;
+}
