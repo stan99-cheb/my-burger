@@ -1,3 +1,28 @@
 :root {
-  
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  --font-text: 'JetBrains Mono';
+  --font-digital: 'Iceland';
+  --text-color-primary: #f2f2f3;
+  --text-color-secondary: #8585ad;
+
+  /* Стили Header */
+  --header-background: #1c1c21;
+  --header-height: 88px;
+}
+
+body {
+  background-color: #131316;
+}
+
+*,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+
+  font-family: var(--font-text);
 }
