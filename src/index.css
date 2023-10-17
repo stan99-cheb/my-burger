@@ -11,6 +11,25 @@
   /* Стили Header */
   --header-background: #1c1c21;
   --header-height: 88px;
+
+  /* Табы */
+  --tabs-width: 100%;
+  --tabs-height: 56px;
+  --tab-border-color: #2f2f37;
+  --tab-border-color-active: #4c4cff;
+
+  /* Карточка ингредиента */
+  --ingredient-card-width: 272px;
+  --ingredient-card-height: 208px;
+
+  /* Карточка конструктора */
+  --constructor-card-width: 568px;
+  --constructor-card-height: 80px;
+
+  /* Элемент конструктора */
+  --constructor-element-width: 536px;
+  --constructor-element-height: 80px;
+  --constructor-element-background-color: #1c1c21;
 }
 
 body {
@@ -22,7 +41,21 @@ body {
 ::after {
   margin: 0;
   padding: 0;
-  box-sizing: inherit;
+  box-sizing: border-box;
 
   font-family: var(--font-text);
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+/* цвет дорожки */
+::-webkit-scrollbar-track {
+  background: #2f2f37;
+}
+
+/* цвет плашки */
+::-webkit-scrollbar-thumb {
+  background-color: #8585ad;
 }

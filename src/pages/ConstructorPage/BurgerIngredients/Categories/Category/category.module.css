@@ -1,0 +1,23 @@
+.categoryName {
+  margin-bottom: 24px;
+}
+
+.cards {
+  margin-bottom: 40px;
+  padding: 0 8px;
+
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+
+  list-style-type: none;
+}
+
+.card {
+  width: var(--ingredient-card-width);
+  height: var(--ingredient-card-height);
+
+  border: 1px solid teal;
+
+  cursor: grab;
+}

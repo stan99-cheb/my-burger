@@ -1,0 +1,13 @@
+.container {
+  flex: 0 1 600px;
+}
+
+.title {
+  margin: 40px 0 20px;
+
+  font-size: 36px;
+  font-weight: 800;
+  line-height: 40px;
+
+  color: var(--text-color-primary);
+}

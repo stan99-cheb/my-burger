@@ -1,10 +1,11 @@
 // import styles from './button.module.css'
 
-const Button = ({ htmlType, extraClass, children }) => {
+const Button = ({ htmlType, extraClass, onClick, children }) => {
   return (
     <button
       type={htmlType}
       className={extraClass}
+      onClick={onClick}
     >
       {children}
     </button>

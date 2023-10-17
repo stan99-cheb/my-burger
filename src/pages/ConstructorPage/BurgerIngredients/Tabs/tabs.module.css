@@ -1,0 +1,30 @@
+.tabs {
+  margin-bottom: 40px;
+
+  width: var(--tabs-width);
+  height: var(--tabs-height);
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  list-style-type: none;
+}
+
+.tab {
+  padding: 16px 40px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  flex: 1 1 auto;
+
+  border-bottom: 1px solid var(--tab-border-color);
+}
+
+.activeTab {
+  border-bottom: 1px solid var(--tab-border-color-active);
+
+  pointer-events: none;
+}

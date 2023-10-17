@@ -1,0 +1,32 @@
+[
+  {
+    "name": "tab1",
+    "cards": [
+      "card1",
+      "card2"
+    ]
+  },
+  {
+    "name": "tab2",
+    "cards": [
+      "card3",
+      "card4",
+      "card5",
+      "card6"
+    ]
+  },
+  {
+    "name": "tab3",
+    "cards": [
+      "card7",
+      "card8",
+      "card9",
+      "card10",
+      "card11",
+      "card12",
+      "card13",
+      "card14",
+      "card15"
+    ]
+  }
+]

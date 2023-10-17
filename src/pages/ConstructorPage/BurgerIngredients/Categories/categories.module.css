@@ -1,0 +1,7 @@
+.categories {
+  list-style-type: none;
+
+  height: calc(100% - 100px - var(--tabs-height) - 40px);
+
+  overflow: auto;
+}
