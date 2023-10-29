@@ -1,10 +1,9 @@
 import React from 'react'
 import RenderList from '../../../../components/RenderList/render-list'
-import tabs from '../../../../data/tabs-data.json'
 import Category from './Category/category';
 import styles from './categories.module.css'
 
-const Categories = ({ setActiveTab, tabsRef }) => {
+const Categories = ({ setActiveTab, categories, tabsRef }) => {
   const categoriesRef = React.useRef(null);
   const observer = React.useRef(null);
 
@@ -13,9 +12,9 @@ const Categories = ({ setActiveTab, tabsRef }) => {
       key={i}
     >
       <Category
-        name={category.name}
-        cards={category.cards}
-        ref={tabsRef[category.name]}
+        tab={category.tab}
+        ingredients={category.ingredients}
+        ref={tabsRef[category.tab.type]}
       />
     </li>
   ), [tabsRef]);
@@ -24,7 +23,7 @@ const Categories = ({ setActiveTab, tabsRef }) => {
     if (observer.current) observer.current.disconnect();
 
     observer.current = new IntersectionObserver(([entry]) =>
-      entry.isIntersecting && setActiveTab(entry.target.dataset.value),
+      entry.isIntersecting && setActiveTab(entry.target.dataset.type),
       { root: categoriesRef.current, rootMargin: "0% 0% -90%", threshold: [0.0, 1.0] }
     );
 
@@ -37,7 +36,7 @@ const Categories = ({ setActiveTab, tabsRef }) => {
 
   return (
     <RenderList
-      list={tabs}
+      list={categories}
       extraStyle={styles.categories}
       callback={callback}
       ref={categoriesRef}

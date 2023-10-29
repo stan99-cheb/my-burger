@@ -1,18 +1,18 @@
 import React from 'react';
-import LockIcon from '../../../../components/Icons/lock-icon'
-import DeleteIcon from '../../../../components/Icons/delete-icon'
+import LockIcon from '../Icons/lock-icon'
+import DeleteIcon from '../Icons/delete-icon'
+import CurrencyIcon from '../Icons/currency-icon'
 import styles from './constructor-element.module.css'
-import CurrencyIcon from '../../../../components/Icons/currency-icon';
 
-const ConstructorElement = React.memo(({ type, thumbnail, name, price, isLocked, onClick }) => {
+const ConstructorElement = React.memo(({ type, thumbnail, name, price, isLocked, deleteElmentHandler, extraStyle }) => {
 
-  // React.useEffect(() => {
-  //   console.log('Render ConstructorElement');
-  // });
+  const onClick = React.useCallback(() => {
+    deleteElmentHandler(name);
+  }, [deleteElmentHandler, name]);
 
   return (
     <article
-      className={type ? `${styles.element} ${styles[type]}` : styles.element}
+      className={type ? `${extraStyle} ${styles[type]}` : extraStyle}
     >
       <img
         className={styles.image}
@@ -38,7 +38,6 @@ const ConstructorElement = React.memo(({ type, thumbnail, name, price, isLocked,
           : <DeleteIcon type='primary' onClick={onClick} />
         }
       </span>
-      {console.log('Render ConstructorElement')}
     </article>
   );
 })

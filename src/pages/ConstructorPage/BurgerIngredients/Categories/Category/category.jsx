@@ -1,34 +1,39 @@
 import React from 'react'
 import RenderList from '../../../../../components/RenderList/render-list'
 import styles from './category.module.css'
-import Card from '../../../../../components/Card/card';
+import DragElement from '../../../../../components/DragElement/drag-element';
+import Ingredient from './Ingredient/ingredient';
 
-const _Category = React.forwardRef(({ name, cards }, ref) => {
+const _Category = React.forwardRef(({ tab, ingredients }, ref) => {
 
-  const callback = React.useCallback((card, i) => (
+  const callback = React.useCallback((ingredient, i) => (
     <li
       key={i}
     >
-      <Card
-        extraStyle={styles.card}
-        value={card}
+      <DragElement
+        drag={true}
+        extraStyle={styles.drag}
+        value={ingredient._id}
       >
-        {card}
-      </Card>
+        <Ingredient
+          extraStyle={styles.ingredient}
+          ingredient={ingredient}
+        />
+      </DragElement>
     </li>
   ), [])
 
   return (
     <>
       <h2
-        className={styles.categoryName}
-        data-value={name}
+        className={styles.name}
+        data-type={tab.type}
         ref={ref}
       >
-        {name}
+        {tab.value}
       </h2>
       <RenderList
-        list={cards}
+        list={ingredients}
         extraStyle={styles.cards}
         callback={callback}
       />

@@ -1,17 +1,3 @@
-.element {
-  padding: 16px 32px;
-
-  width: var(--constructor-element-width);
-  height: var(--constructor-element-height);
-
-  border-radius: 40px;
-  background-color: var(--constructor-element-background-color);
-
-  display: flex;
-  align-items: center;
-  column-gap: 20px;
-}
-
 .top {
   border-radius: 88px 88px 40px 40px;
 }

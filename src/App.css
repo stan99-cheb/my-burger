@@ -1,9 +1,15 @@
 #root {
-  width: 100vw;
-  height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto 1fr;
+  gap: 40px 0px;
+  grid-template-areas:
+    "header"
+    "main";
+  grid-area: root;
 }
 
-.text {
+/* .text {
   font-size: 48px;
   font-weight: 600;
 }
@@ -11,4 +17,4 @@
 .digital {
   font-family: var(--font-digital);
   font-size: 48px;
-}
+} */

@@ -1,30 +1,39 @@
 .tabs {
-  margin-bottom: 40px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 56px;
 
-  width: var(--tabs-width);
-  height: var(--tabs-height);
-
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
+  grid-area: tabs;
 
   list-style-type: none;
 }
 
 .tab {
-  padding: 16px 40px;
-
   display: flex;
   justify-content: center;
   align-items: center;
-
-  flex: 1 1 auto;
 
   border-bottom: 1px solid var(--tab-border-color);
 }
 
 .activeTab {
   border-bottom: 1px solid var(--tab-border-color-active);
-
   pointer-events: none;
+}
+
+.button {
+  background-color: transparent;
+
+  border: none;
+
+  font-size: 16px;
+  line-height: 24px;
+
+  color: var(--text-color-secondary);
+
+  display: inline-flex;
+  align-items: center;
+  column-gap: 8px;
+
+  cursor: pointer;
 }

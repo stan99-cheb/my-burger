@@ -1,18 +1,63 @@
-.container {
-  display: flex;
-  flex-direction: column;
-  row-gap: 16px;
+.components {
+  overflow: hidden;
+
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto 1fr auto;
+  gap: 16px 0px;
+  grid-template-areas:
+    "bun-top"
+    "drag-components"
+    "bun-bottom";
+
+  grid-area: components;
 }
 
-.cards {
-  display: flex;
-  flex-direction: column;
-  row-gap: 16px;
+.bunTop {
+  margin-left: 32px;
+
+  grid-area: bun-top;
+}
+
+.dragComponents {
+  overflow: auto;
 
   list-style-type: none;
+
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  gap: 16px 0px;
+
+  grid-area: drag-components;
 }
 
-.card {
-  width: var(--constructor-card-width);
-  height: var(--constructor-card-height);
+.drag {
+  display: flex;
+  align-items: center;
+  column-gap: 8px;
+}
+
+.icon {
+  cursor: grab;
+}
+
+.element {
+  padding: 16px 32px 16px 24px;
+
+  width: var(--constructor-element-width);
+  height: var(--constructor-element-height);
+
+  border-radius: 40px;
+  background-color: var(--constructor-element-background-color);
+
+  display: flex;
+  align-items: center;
+  column-gap: 20px;
+}
+
+.bunBottom {
+  margin-left: 32px;
+
+  grid-area: bun-bottom;
 }

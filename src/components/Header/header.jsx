@@ -3,9 +3,11 @@ import Logo from './Logo/logo';
 import Navigation from './Navigation/navigation';
 import styles from './header.module.css'
 
-const Header = () => {
+const Header = ({ extraStyle }) => {
   return (
-    <header className={styles.container}>
+    <header
+      className={`${extraStyle} ${styles.container}`}
+    >
       <Navigation />
       <Logo extraStyle={styles.logo} />
       <Account />

@@ -1,52 +1,66 @@
 import React from 'react'
 import styles from './burger-components.module.css'
+import DragElement from '../../../../components/DragElement/drag-element'
 import RenderList from '../../../../components/RenderList/render-list'
-import ConstructorElement from '../ConstructorElement/constructor-element'
+import ConstructorElement from '../../../../components/ConstructorElement/constructor-element'
 import bunImage from '../../../../assets/bun-02.svg'
+import DragIcon from '../../../../components/Icons/drag-icon'
 
-const BurgerComponents = ({ cards }) => {
-  const bun = React.useMemo(() => cards.find(card => (card === 'card1') || (card === 'card2')), [cards]);
-  const array = React.useMemo(() => cards.filter(card => (card !== 'card1') && (card !== 'card2')), [cards]);
+const BurgerComponents = ({ components, updateComponents }) => {
+  const bun = components.find(item => (item.ingredient === 'card1') || (item.ingredient === 'card2'));
+  const array = components.filter(item => (item.ingredient !== 'card1') && (item.ingredient !== 'card2'));
 
-  React.useEffect(() => {
-    console.log('bun');
-  }, [bun]);
+  const deleteElmentHandler = React.useCallback((card) => {
+    updateComponents(prev => prev.filter(item => item.ingredient !== card));
+  }, [updateComponents]);
 
-  const deleteElmentHandler = () => {
-    console.log('Delete');
-  };
+  const callback = React.useCallback((item) => (
+    <li
+      key={item.uuid}
+    >
+      <DragElement
+        drag={true}
+        extraStyle={styles.drag}
+      >
+        <span
+          className={styles.icon}
+        >
+          <DragIcon type='primary' />
+        </span>
+        <ConstructorElement
+          name={item.ingredient}
+          price='1000'
+          deleteElmentHandler={deleteElmentHandler}
+          extraStyle={styles.element}
+        />
+      </DragElement>
+    </li>
+  ), [deleteElmentHandler]);
 
   if (!bun) return;
 
   return (
-    <section className={styles.container}>
+    <section className={styles.components}>
       <ConstructorElement
         type='top'
         thumbnail={bunImage}
-        name={bun}
+        name={bun.ingredient}
         price='100'
         isLocked='true'
+        extraStyle={`${styles.element} ${styles.bunTop}`}
       />
-      {!!array.length &&
-        <RenderList
-          list={array}
-          extraStyle={styles.cards}
-          callback={card =>
-            // className={styles.card}
-            <ConstructorElement
-              name={card}
-              price='1000'
-              onClick={deleteElmentHandler}
-            />
-          }
-        />
-      }
+      <RenderList
+        list={array}
+        extraStyle={styles.dragComponents}
+        callback={callback}
+      />
       <ConstructorElement
         type='bottom'
         thumbnail={bunImage}
-        name={bun}
+        name={bun.ingredient}
         price='100'
         isLocked='true'
+        extraStyle={`${styles.element} ${styles.bunBottom}`}
       />
     </section>
   );

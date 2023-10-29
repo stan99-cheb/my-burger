@@ -1,7 +1,14 @@
 .categories {
+  padding-bottom: 40px;
+
   list-style-type: none;
 
-  height: calc(100% - 100px - var(--tabs-height) - 40px);
-
   overflow: auto;
+
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  gap: 40px 0;
+
+  grid-area: categories;
 }

@@ -1,7 +1,13 @@
 .main {
-  height: calc(100% - var(--header-height));
+  position: relative;
 
-  display: flex;
+  display: grid;
+  grid-template-columns: 600px 600px;
+  grid-template-rows: 1fr;
+  gap: 0px 40px;
   justify-content: center;
-  column-gap: 40px;
+  grid-template-areas:
+    "panel1 panel2";
+
+  grid-area: main;
 }
