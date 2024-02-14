@@ -1,0 +1,11 @@
+.tab {
+  border: none;
+  background-color: transparent;
+
+  cursor: pointer;
+}
+
+.active {
+  border-bottom: 1px solid teal;
+  pointer-events: none;
+}
