@@ -1,25 +1,18 @@
-import React from 'react'
-import { useDispatch, useSelector } from 'react-redux'
 import './App.css'
+import Fetch from './components/Fetch/fetch'
+import LoadingSpinner from './components/LoadingSpinner/loading-spinner'
 import ConstructorPage from "./pages/ConstructorPage/constructor-page"
-import { getIngredients } from './features/ingredients/ingredients-thunk'
-import { selectors } from './store/selectors'
 
 const App = () => {
-  const dispatch = useDispatch();
-  const status = useSelector(selectors.ingredients.status);
-
-  React.useEffect(
-    () => {
-      dispatch(getIngredients());
-    },
-    [dispatch]
-  );
-
-  if (status === 'loading') return console.log('Loading...');
-
   return (
-    <ConstructorPage />
+    <Fetch
+      endpoint='/ingredients'
+      loadingFallback={<LoadingSpinner />}
+      renderSuccess={
+        (data) =>
+          <ConstructorPage data={data} />
+      }
+    />
   )
 }
 

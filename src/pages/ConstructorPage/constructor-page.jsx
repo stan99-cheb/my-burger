@@ -1,8 +1,21 @@
+import React from "react";
+import PropTypes from "prop-types";
+import { useDispatch } from "react-redux";
+import styles from "./constructor-page.module.css";
 import PanelIngredients from "./PanelIngredients/panel-ingredients";
 import RenderList from "../../components/RenderList/render-list";
-import styles from "./constructor-page.module.css";
+import { setIngredients } from "../../features/ingredients/ingredients-slice";
 
-const ConstructorPage = () => {
+const ConstructorPage = ({ data }) => {
+  const dispatch = useDispatch();
+
+  React.useEffect(
+    () => {
+      dispatch(setIngredients(data));
+    },
+    [dispatch, data]
+  );
+
   const panels = [
     { name: "ingredients", component: PanelIngredients, }
   ];
@@ -29,6 +42,10 @@ const ConstructorPage = () => {
       />
     </main>
   );
-}
+};
+
+ConstructorPage.propTypes = {
+  data: PropTypes.arrayOf(PropTypes.object),
+};
 
 export default ConstructorPage;
