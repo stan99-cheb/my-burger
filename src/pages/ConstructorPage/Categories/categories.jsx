@@ -14,7 +14,9 @@ const Categories = () => {
       <Category
         title={tab.name}
       >
-        Карточки ингредиентов
+        <p>
+          Карточки ингредиентов
+        </p>
       </Category>
     </li>;
 
