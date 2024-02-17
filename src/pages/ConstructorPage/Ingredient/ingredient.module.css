@@ -1,0 +1,9 @@
+.price {
+  display: flex;
+  align-items: center;
+  column-gap: 8px;
+}
+
+.name {
+  text-align: center;
+}

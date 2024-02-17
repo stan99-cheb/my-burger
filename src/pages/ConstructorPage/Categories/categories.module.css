@@ -2,3 +2,22 @@
   height: calc(100% - 60px);
   overflow: auto;
 }
+
+.cards {
+  margin: 0 auto;
+  width: 95%;
+
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.ingredient {
+  width: 272px;
+  /* height: 208px; */
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 4px;
+}
