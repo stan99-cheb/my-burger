@@ -9,6 +9,7 @@ import Ingredient from "../Ingredient/ingredient";
 const Categories = () => {
   const tabs = useSelector(selectors.tabs.data);
   const selectedIngredientsByType = useSelector(selectors.ingredients.selectedIngredientsByType);
+  const rootRef = React.useRef(null);
 
   const renderIngredient = React.useCallback(
     (ingredient) => (
@@ -34,6 +35,8 @@ const Categories = () => {
       >
         <Category
           title={tab.name}
+          type={tab.type}
+          rootRef={rootRef}
         >
           <RenderList
             list={selectedIngredientsByType[tab.type]}
@@ -53,6 +56,7 @@ const Categories = () => {
       list={tabs}
       callback={renderCategory}
       extraStyle={styles.categories}
+      ref={rootRef}
     />
   );
 }

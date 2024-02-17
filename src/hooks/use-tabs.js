@@ -5,14 +5,24 @@ import { setActive } from "../features/tabs/tabs-slice";
 const useTabs = () => {
   const dispatch = useDispatch();
 
-  const onActive = React.useCallback(
-    (e) =>
-      dispatch(setActive(e.target.value)),
+  const onScrollToCategory = React.useCallback(
+    (e) => {
+      const value = e.target.value;
+      const node = document.querySelector(`[data-type="${value}"]`)
+      node.scrollIntoView({ behavior: 'smooth' });
+    },
+    []
+  );
+
+  const onActiveTab = React.useCallback(
+    (type) =>
+      dispatch(setActive(type)),
     [dispatch]
   );
 
   return {
-    onActive,
+    onScrollToCategory,
+    onActiveTab,
   };
 }
 

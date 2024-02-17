@@ -9,7 +9,7 @@ const Tab = ({
   extraStyle = '',
   children
 }) => {
-  const { onActive } = useTabs();
+  const { onScrollToCategory } = useTabs();
 
   const rootStyle = [styles.tab];
   extraStyle && rootStyle.push(extraStyle);
@@ -20,7 +20,7 @@ const Tab = ({
       className={rootStyle.join(' ')}
       type="button"
       value={type}
-      onClick={onActive}
+      onClick={onScrollToCategory}
     >
       {children}
     </button>

@@ -18,7 +18,7 @@ export const initialState = {
       type: "main"
     },
   ],
-  active: 'bun',
+  active: undefined,
 };
 
 const tabsSlice = createSlice({
