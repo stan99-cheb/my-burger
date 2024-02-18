@@ -1,0 +1,13 @@
+.tabs {
+  margin-bottom: 20px;
+  height: 60px;
+
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.categories {
+  height: calc(100% - 80px);
+  overflow: auto;
+}

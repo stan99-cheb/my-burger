@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import { useSelector } from "react-redux";
 import styles from "./categories.module.css";
 import { selectors } from "../../../store/selectors";
@@ -6,7 +7,7 @@ import RenderList from "../../../components/RenderList/render-list";
 import Category from "../Category/category";
 import Ingredient from "../Ingredient/ingredient";
 
-const Categories = () => {
+const Categories = ({ extraStyle }) => {
   const tabs = useSelector(selectors.tabs.data);
   const selectedIngredientsByType = useSelector(selectors.ingredients.selectedIngredientsByType);
   const rootRef = React.useRef(null);
@@ -55,10 +56,14 @@ const Categories = () => {
     <RenderList
       list={tabs}
       callback={renderCategory}
-      extraStyle={styles.categories}
+      extraStyle={extraStyle}
       ref={rootRef}
     />
   );
-}
+};
+
+Categories.propTypes = {
+  extraStyle: PropTypes.string,
+};
 
 export default Categories;

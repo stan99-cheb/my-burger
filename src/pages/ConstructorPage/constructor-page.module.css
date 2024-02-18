@@ -1,8 +1,11 @@
-.main {}
+.panels {
+  height: 100%;
 
-.panels {}
+  display: flex;
+  justify-content: center;
+  column-gap: 40px;
+}
 
 .panel {
   width: 600px;
-  height: 800px;
 }

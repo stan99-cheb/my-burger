@@ -1,11 +1,12 @@
 import React from "react";
+import PropTypes from "prop-types";
 import { useSelector } from "react-redux";
 import styles from "./tabs.module.css";
 import { selectors } from "../../../store/selectors";
 import RenderList from "../../../components/RenderList/render-list";
 import PureTab from "../Tab/tab";
 
-const Tabs = () => {
+const Tabs = ({ extraStyle }) => {
   const tabs = useSelector(selectors.tabs.data);
   const active = useSelector(selectors.tabs.active);
 
@@ -16,8 +17,8 @@ const Tabs = () => {
       >
         <PureTab
           active={active === tab.type}
-          extraStyle={styles.tab}
           type={tab.type}
+          extraStyle={styles.tab}
         >
           {tab.name}
         </PureTab>
@@ -29,9 +30,13 @@ const Tabs = () => {
     <RenderList
       list={tabs}
       callback={callback}
-      extraStyle={styles.tabs}
+      extraStyle={extraStyle}
     />
   );
-}
+};
+
+Tabs.propTypes = {
+  extraStyle: PropTypes.string,
+};
 
 export default Tabs;

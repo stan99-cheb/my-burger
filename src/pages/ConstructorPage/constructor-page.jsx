@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import { useDispatch } from "react-redux";
 import styles from "./constructor-page.module.css";
 import PanelIngredients from "./PanelIngredients/panel-ingredients";
+import PanelConstructor from "./PanelConstructor/panel-constructor";
 import RenderList from "../../components/RenderList/render-list";
 import { setIngredients } from "../../features/ingredients/ingredients-slice";
 
@@ -17,7 +18,8 @@ const ConstructorPage = ({ data }) => {
   );
 
   const panels = [
-    { name: "ingredients", component: PanelIngredients, }
+    { name: "ingredients", component: PanelIngredients, },
+    { name: "constructor", component: PanelConstructor, }
   ];
 
   const getComponent = (Component) =>
@@ -25,22 +27,18 @@ const ConstructorPage = ({ data }) => {
 
   const callback = (panel) =>
     <li
-      key={panel.name}
+      key={panel.name.toString()}
       className={styles.panel}
     >
       {getComponent(panel.component)}
     </li>;
 
   return (
-    <main
-      className={styles.main}
-    >
-      <RenderList
-        list={panels}
-        callback={callback}
-        extraStyle={styles.panels}
-      />
-    </main>
+    <RenderList
+      list={panels}
+      callback={callback}
+      extraStyle={styles.panels}
+    />
   );
 };
 

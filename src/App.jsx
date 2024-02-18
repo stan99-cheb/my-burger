@@ -5,14 +5,25 @@ import ConstructorPage from "./pages/ConstructorPage/constructor-page"
 
 const App = () => {
   return (
-    <Fetch
-      endpoint='/ingredients'
-      loadingFallback={<LoadingSpinner />}
-      renderSuccess={
-        (data) =>
-          <ConstructorPage data={data} />
-      }
-    />
+    <>
+      <header
+        className='header'
+      >
+        Какая-то шапка
+      </header>
+      <main
+        className='main'
+      >
+        <Fetch
+          endpoint='/ingredients'
+          loadingFallback={<LoadingSpinner />}
+          renderSuccess={
+            (data) =>
+              <ConstructorPage data={data} />
+          }
+        />
+      </main>
+    </>
   )
 }
 
