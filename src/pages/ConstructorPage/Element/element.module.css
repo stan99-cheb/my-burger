@@ -1,0 +1,31 @@
+.thumbnail {
+  width: 80px;
+  height: 40px;
+}
+
+.name {
+  width: 53%;
+}
+
+.price {
+  display: flex;
+  align-items: center;
+  column-gap: 8px;
+}
+
+.action {
+  display: flex;
+  align-items: center;
+
+  cursor: pointer;
+}
+
+.element_top {
+  padding: 16px 32px 16px 24px;
+  border-radius: 88px 88px 40px 40px;
+}
+
+.element_bottom {
+  padding: 16px 32px 16px 24px;
+  border-radius: 40px 40px 88px 88px;
+}

@@ -12,3 +12,6 @@ export const selectedIngredientsByType = createSelector(
     {}
   )
 );
+
+export const ingredientsBun = (state) => ingredientsAll(state).bun;
+export const ingredientsComponents = (state) => ingredientsAll(state).components;

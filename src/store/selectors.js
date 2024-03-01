@@ -1,5 +1,11 @@
 import { tabActive, tabsData } from "../features/tabs/tabs-selectors";
-import { selectedIngredientsByType, ingredientsData, ingredientsStatus } from "../features/ingredients/ingredients-selectors"
+import {
+  selectedIngredientsByType,
+  ingredientsData,
+  ingredientsStatus,
+  ingredientsBun,
+  ingredientsComponents,
+} from "../features/ingredients/ingredients-selectors"
 
 export const selectors = {
   tabs: {
@@ -10,5 +16,7 @@ export const selectors = {
     data: ingredientsData,
     status: ingredientsStatus,
     selectedIngredientsByType: selectedIngredientsByType,
+    bun: ingredientsBun,
+    components: ingredientsComponents,
   },
 };

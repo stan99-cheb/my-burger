@@ -1,0 +1,48 @@
+.empty {
+  height: calc(100% - 40%);
+
+  font-size: 32px;
+  font-weight: 600;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.active {
+  background-color: teal;
+}
+
+.drag {
+  display: inline-flex;
+  align-items: center;
+  column-gap: 8px;
+
+  cursor: grab;
+}
+
+.bun {
+  padding-left: 32px;
+}
+
+.element {
+  padding: 16px 24px;
+  width: 536px;
+  height: 80px;
+
+  border-radius: 40px;
+  background-color: teal;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  column-gap: 20px;
+}
+
+.components {
+  display: flex;
+  flex-direction: column;
+  row-gap: 16px;
+
+  overflow: auto;
+}

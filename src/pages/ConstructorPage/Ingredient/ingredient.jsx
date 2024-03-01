@@ -1,37 +1,53 @@
 import PropTypes from "prop-types";
 import styles from "./ingredient.module.css";
 import * as icons from "../../../components/Icons/index";
+import useDragAndDrop from "../../../hooks/use-drag-and-drop";
 
-const Ingredient = ({ image, price, icon, name }) => {
+const Ingredient = ({
+  ingredient,
+  icon,
+  extraStyle
+}) => {
   const Icon = icons[icon];
+  const {
+    dragStartHandler,
+    dragEndHandler,
+  } = useDragAndDrop({
+    sendData: ingredient,
+    type: 'copy'
+  });
 
   return (
-    <>
+    <div
+      className={extraStyle}
+      onDragStart={dragStartHandler}
+      onDragEnd={dragEndHandler}
+      draggable
+    >
       <img
         className={styles.image}
-        src={image}
+        src={ingredient.image}
         alt="ingredient"
       />
       <p
         className={styles.price}
       >
-        {price}
+        {ingredient.price}
         <Icon />
       </p>
       <p
         className={styles.name}
       >
-        {name}
+        {ingredient.name}
       </p>
-    </>
+    </div>
   );
 };
 
 Ingredient.propTypes = {
-  image: PropTypes.string,
-  price: PropTypes.number,
+  ingredient: PropTypes.object,
   icon: PropTypes.string,
-  name: PropTypes.string,
+  extraStyle: PropTypes.string,
 };
 
 export default Ingredient;

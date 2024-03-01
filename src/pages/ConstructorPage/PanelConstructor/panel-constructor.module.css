@@ -1,0 +1,18 @@
+.components {
+  margin-bottom: 40px;
+  max-height: calc(100% - 64px - 40px);
+
+  display: flex;
+  flex-direction: column;
+  row-gap: 16px;
+}
+
+.order {
+  height: 64px;
+
+  border: 1px solid teal;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

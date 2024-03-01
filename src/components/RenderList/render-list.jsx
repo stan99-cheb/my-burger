@@ -23,8 +23,8 @@ const RenderList = React.forwardRef(({
 RenderList.displayName = 'RenderList';
 
 RenderList.propTypes = {
-  list: PropTypes.array.isRequired,
-  callback: PropTypes.func.isRequired,
+  list: PropTypes.array,
+  callback: PropTypes.func,
   extraStyle: PropTypes.string,
 };
 

@@ -1,3 +1,7 @@
+.image {
+  pointer-events: none;
+}
+
 .price {
   display: flex;
   align-items: center;

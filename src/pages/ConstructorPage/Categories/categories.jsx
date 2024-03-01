@@ -16,13 +16,11 @@ const Categories = ({ extraStyle }) => {
     (ingredient) => (
       <li
         key={ingredient._id}
-        className={styles.ingredient}
       >
         <Ingredient
-          image={ingredient.image}
-          price={ingredient.price}
+          ingredient={ingredient}
           icon='CurrencyIcon'
-          name={ingredient.name}
+          extraStyle={styles.ingredient}
         />
       </li>
     ),
