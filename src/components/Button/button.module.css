@@ -1,0 +1,25 @@
+.button {
+  border: none;
+  background-color: transparent;
+}
+
+.button_type_primary {
+  background-color: teal;
+  border-radius: 64px;
+}
+
+.button_size_medium {
+  padding: 16px 40px 16px 40px;
+  min-width: 138px;
+  height: 56px;
+}
+
+.button_state_default {
+  cursor: pointer;
+}
+
+.button_state_disabled {
+  pointer-events: none;
+
+  background-color: rgba(0, 0, 0, .5);
+}

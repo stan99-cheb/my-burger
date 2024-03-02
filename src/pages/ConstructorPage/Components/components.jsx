@@ -1,3 +1,4 @@
+import React from "react";
 import PropTypes from "prop-types";
 import { useDispatch, useSelector } from "react-redux";
 import useDragAndDrop from "../../../hooks/use-drag-and-drop";
@@ -7,13 +8,12 @@ import { selectors } from "../../../store/selectors";
 import PureElement from "../Element/element";
 import { updateBun, updateComponents } from "../../../features/ingredients/ingredients-slice";
 import DragElement from "../DragElement/drag-element";
-import React from "react";
 import RenderList from "../../../components/RenderList/render-list";
 
 const Components = ({ extraStyle }) => {
   const dispatch = useDispatch();
-  const bun = useSelector(selectors.ingredients.bun);
-  const components = useSelector(selectors.ingredients.components);
+  const bun = useSelector(selectors.ingredients.bun) || {};
+  const components = useSelector(selectors.ingredients.components) || [];
   const cbDragCopy = (ingredient) => {
     if (ingredient.type === 'bun') {
       dispatch(updateBun(ingredient));
@@ -67,7 +67,8 @@ const Components = ({ extraStyle }) => {
     [cbDragMove]
   );
 
-  if (!bun) return (<Empty extraStyle={styles.empty} />);
+  if (Object.keys(bun).length === 0)
+    return (<Empty extraStyle={styles.empty} />);
 
   return (
     <div

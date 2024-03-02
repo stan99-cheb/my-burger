@@ -8,11 +8,11 @@
 }
 
 .order {
+  padding-right: 32px;
   height: 64px;
 
-  border: 1px solid teal;
-
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
+  column-gap: 48px;
 }

@@ -3,7 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
   data: undefined,
   status: 'idle',
-  bun: undefined,
+  bun: {},
   components: [],
 };
 
@@ -22,7 +22,7 @@ const ingredientsSlice = createSlice({
     },
     updateComponents(state, { payload }) {
       state.components = [...payload];
-    }
+    },
   },
 });
 

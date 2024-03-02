@@ -9,6 +9,7 @@ const PanelConstructor = () => {
         extraStyle={styles.components}
       />
       <Order
+        icon='CurrencyIcon'
         extraStyle={styles.order}
       />
     </>

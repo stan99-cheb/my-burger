@@ -1,0 +1,12 @@
+.price {
+  display: flex;
+  align-items: center;
+  column-gap: 8px;
+
+  font-size: 48px;
+}
+
+.price svg {
+  width: 36px;
+  height: 36px;
+}
