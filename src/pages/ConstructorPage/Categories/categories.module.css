@@ -16,4 +16,10 @@
   row-gap: 4px;
 
   cursor: grab;
+
+  position: relative;
+}
+
+.count {
+  position: relative;
 }

@@ -5,6 +5,7 @@ import {
   ingredientsStatus,
   ingredientsBun,
   ingredientsComponents,
+  ingredientsCount,
 } from "../features/ingredients/ingredients-selectors"
 
 export const selectors = {
@@ -18,5 +19,6 @@ export const selectors = {
     selectedIngredientsByType: selectedIngredientsByType,
     bun: ingredientsBun,
     components: ingredientsComponents,
+    count: ingredientsCount,
   },
 };

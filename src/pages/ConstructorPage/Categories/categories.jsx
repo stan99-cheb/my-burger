@@ -6,6 +6,7 @@ import { selectors } from "../../../store/selectors";
 import RenderList from "../../../components/RenderList/render-list";
 import Category from "../Category/category";
 import Ingredient from "../Ingredient/ingredient";
+import Count from "../Count/count";
 
 const Categories = ({ extraStyle }) => {
   const tabs = useSelector(selectors.tabs.data);
@@ -16,11 +17,15 @@ const Categories = ({ extraStyle }) => {
     (ingredient) => (
       <li
         key={ingredient._id}
+        className={styles.count}
       >
         <Ingredient
           ingredient={ingredient}
           icon='CurrencyIcon'
           extraStyle={styles.ingredient}
+        />
+        <Count
+          ingredient={ingredient}
         />
       </li>
     ),
