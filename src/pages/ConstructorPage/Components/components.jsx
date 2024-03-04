@@ -45,6 +45,15 @@ const Components = ({ extraStyle }) => {
   const rootStyle = [extraStyle];
   activeZone && rootStyle.push(styles.active);
 
+  const deleteComponent = React.useCallback(
+    (array, uuid) =>
+      () => {
+        const swap = array.filter(component => component.uuid !== uuid);
+        dispatch(updateComponents(swap));
+      },
+    [dispatch]
+  );
+
   const renderComponents = React.useCallback(
     (ingredient, i, array) =>
       <li
@@ -60,11 +69,12 @@ const Components = ({ extraStyle }) => {
             thumbnail={ingredient.image}
             name={ingredient.name}
             price={ingredient.price}
+            deleteComponent={deleteComponent(array, ingredient.uuid)}
             extraStyle={styles.element}
           />
         </DragElement>
       </li>,
-    [cbDragMove]
+    [cbDragMove, deleteComponent]
   );
 
   if (Object.keys(bun).length === 0)

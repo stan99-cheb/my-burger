@@ -9,6 +9,7 @@ const Element = ({
   thumbnail,
   name,
   price,
+  deleteComponent,
   extraStyle,
 }) => {
   const rootStyle = [styles[`element_${type}`]];
@@ -16,7 +17,7 @@ const Element = ({
 
   const action = isLocked
     ? <LockIcon />
-    : <DeleteIcon />
+    : <DeleteIcon onClick={deleteComponent} />
 
   return (
     <div
@@ -53,6 +54,7 @@ Element.propTypes = {
   thumbnail: PropTypes.string,
   name: PropTypes.string,
   price: PropTypes.number,
+  deleteComponent: PropTypes.func,
   extraStyle: PropTypes.string,
 };
 

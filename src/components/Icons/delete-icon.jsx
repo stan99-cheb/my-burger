@@ -1,3 +1,5 @@
+import PropTypes from "prop-types";
+
 const DeleteIcon = ({ onClick }) => {
   return (
     <svg
@@ -12,6 +14,10 @@ const DeleteIcon = ({ onClick }) => {
       />
     </svg>
   );
+};
+
+DeleteIcon.propTypes = {
+  onClick: PropTypes.func,
 };
 
 export default DeleteIcon;
