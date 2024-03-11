@@ -1,0 +1,75 @@
+.container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(3, auto);
+  gap: 16px 0px;
+  grid-auto-flow: row;
+  justify-items: center;
+  grid-template-areas:
+    "image image image image"
+    "name name name name"
+    "values values values values";
+}
+
+.image {
+  grid-area: image;
+}
+
+.name {
+  grid-area: name;
+
+  font-size: 24px;
+  line-height: 30px;
+  font-weight: 600;
+}
+
+.values {
+  display: grid;
+  grid-template-columns: repeat(4, auto);
+  grid-template-rows: repeat(2, 24px);
+  gap: 8px 16px;
+  grid-auto-flow: row;
+  justify-content: center;
+  justify-items: center;
+  /* grid-template-areas:
+    "calories-name proteins-name fat-name carbohydrates-name"
+    "calories-value proteins-value fat-value carbohydrates-value"; */
+  grid-area: values;
+}
+
+.value {
+  font-size: 14px;
+  line-height: 24px;
+}
+
+/* .calories-name {
+  grid-area: calories-name;
+}
+
+.calories-value {
+  grid-area: calories-value;
+}
+
+.proteins-name {
+  grid-area: proteins-name;
+}
+
+.proteins-value {
+  grid-area: proteins-value;
+}
+
+.fat-name {
+  grid-area: fat-name;
+}
+
+.fat-value {
+  grid-area: fat-value;
+}
+
+.carbohydrates-name {
+  grid-area: carbohydrates-name;
+}
+
+.carbohydrates-value {
+  grid-area: carbohydrates-value;
+} */

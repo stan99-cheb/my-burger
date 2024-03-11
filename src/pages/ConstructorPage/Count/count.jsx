@@ -14,7 +14,6 @@ const Count = ({ ingredient }) => {
     >
       {count}
     </div>
-
   );
 };
 
